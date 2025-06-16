@@ -1,0 +1,328 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/top-bar.css">
+    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/partner.css">
+    <link rel="stylesheet" href="css/quality-section.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/product-range.css">
+    <link rel="stylesheet" href="css/why-us.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/business-info.css">
+    <link rel="stylesheet" href="css/info-table.css">
+
+</head>
+
+<body>
+
+    <div class="top-bar" id="topBar">
+        <div class="company-name">OM SAI TRADING CO.</div>
+        <div class="contact-info">
+            <img src="images/call.svg" alt="Phone" class="phone-icon">
+            <span>+91 98765 43210</span>
+        </div>
+    </div>
+
+    <nav class="nav-bar" id="navBar">
+        <div class="logo">
+            <img src="images/logo.svg" alt="OM SAI TRADING CO. Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="quality-section">
+        <div class="left-text">
+            <span>PROVIDING</span><br><br><span>BEST QUALITY</span>
+        </div>
+        <div class="right-text">
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <button><img src="images/search.svg" alt="Search"></button>
+            </div>
+            <p>
+                OM SAI TRADING CO. IS ONE OF THE
+                BIGGEST SUPPLIER WITH A DECADE WORTH
+                OF EXPERIENCE
+            </p>
+            <a href="#" class="know-more">KNOW MORE</a>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-left">
+            <div class="gst-info">
+                <p><strong>GST NO. :</strong> 07AACF0306E1Z0</p>
+                <p>2117/3, 1st floor Chah Indara Bhagirath place,<br>Chandni chowk Delhi 110006</p>
+            </div>
+
+            <h3>We are regularly supplying to following units and organizations</h3>
+
+            <div class="supply-grid" id="supply-container">
+
+                <script>
+                    const items = ['Oil Plants', 'Steel & Cement plants', 'Paper Mills', 'Sugar Mills',
+                        'Chemicals', 'Textile & Synthetic', 'Industrial units', 'Govt. suppliers'
+                    ];
+
+                    const container = document.getElementById('supply-container');
+
+                    items.forEach(item => {
+                        // Create the div
+                        const div = document.createElement('div');
+                        div.className = 'supply-item';
+
+                        // Create the img tag
+                        const img = document.createElement('img');
+                        img.src = 'images/tick.svg';
+                        img.alt = 'Check Icon';
+                        img.className = 'icon';
+                        // Create the text node
+                        const text = document.createTextNode(item);
+
+                        // Append image and text to div
+                        div.appendChild(img);
+                        div.appendChild(text);
+
+                        // Append div to the container
+                        container.appendChild(div);
+                    });
+                </script>
+
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <!-- Right-side image -->
+            <img src="your-image.jpg" alt="Hero Image">
+        </div>
+    </section>
+
+    <section class="product-range-section">
+        <div class="product-scroll-wrapper">
+
+            <!-- Fixed Title Card -->
+            <div class="product-card title-card">
+                <h2>Our<br>Product<br>Range</h2>
+            </div>
+
+            <!-- Scrollable Product Cards -->
+            <div class="scrollable-cards" id="product-carousel">
+
+                <div class="product-card">
+                    <img src="images/categories/lighting.svg" alt="Wires and Cables">
+                    <br>
+                    <button class="product-range-btn">Lighting</button>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/Safety equipments.svg" alt="Insulation">
+                    <p>Insulation</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/switchgears.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <!-- Add more cards -->
+                <div class="product-card">
+                    <img src="images/categories/wires and cables.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/measuring instruments.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/flameproof Equipments.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/HT-LT-LINE-MATERIALS.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/electrical-accessories.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/Electrical insulatoin.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/copper connectors.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+                <div class="product-card">
+                    <img src="images/categories/electronics-equipments.svg" alt="Measuring Instruments">
+                    <p>Measuring Instruments</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="info-table-section">
+        <h2>Basic Information</h2>
+        <div class="info-table">
+            <div class="row">
+                <div class="label">Nature of Business</div>
+                <div class="value">Wholesaler</div>
+            </div>
+            <div class="row">
+                <div class="label">Owner</div>
+                <div class="value">Jagesh Singh Rajawat</div>
+            </div>
+            <div class="row">
+                <div class="label">Year of Establishment</div>
+                <div class="value">2010</div>
+            </div>
+            <div class="row">
+                <div class="label">Annual Turnover</div>
+                <div class="value">₹2 - ₹2.5 Crore</div>
+            </div>
+            <div class="row">
+                <div class="label">GST No.</div>
+                <div class="value">07AACF0306E1Z0</div>
+            </div>
+            <div class="row">
+                <div class="label">Shipment Mode</div>
+                <div class="value">By Road</div>
+            </div>
+            <div class="row">
+                <div class="label">Payment Mode</div>
+                <div class="value">Cash on Delivery</div>
+            </div>
+            <div class="row">
+                <div class="label">Telephone</div>
+                <div class="value">011-23873590, 42316081</div>
+            </div>
+            <div class="row">
+                <div class="label">Registered Address</div>
+                <div class="value">2117/3, 1st floor Chah Indara, Bhagirath Place, Chandni Chowk, Delhi 110006</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="business-info">
+        <div class="info-container">
+            <div class="info-left">
+                <h2>About Om Sai Trading Co.</h2>
+                <p>
+                    Om Sai Trading Co. is a trusted wholesale supplier of high-quality electrical and hardware products,
+                    serving contractors, retailers, and businesses across the region. With years of experience and a
+                    strong
+                    supplier network, we bring you a vast product range — from wires and lights to lugs, glands, and PVC
+                    hardware etc — all under one roof.
+                </p>
+
+                <div class="highlights">
+                    <div class="highlight-box">
+                        <h3>1500+</h3>
+                        <p>Products in Stock</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>200+</h3>
+                        <p>Happy Clients</p>
+                    </div>
+                    <div class="highlight-box">
+                        <h3>10+</h3>
+                        <p>Years in Business</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-right">
+                <div class="info-card">
+                    <h4>Business Hours</h4>
+                    <p><strong>Mon–Sat:</strong> 9:00 AM – 7:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+
+                    <h4>Location</h4>
+                    <p>123 Hardware Lane, Industrial Area,<br> City Name, State, PIN Code</p>
+
+                    <h4>Contact</h4>
+                    <p>📞 +91-9876543210</p>
+                    <p>✉️ omsaitrading@example.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="why-choose-us">
+        <h2>Why Choose Us?</h2>
+        <p class="intro">
+            At Om Sai Trading, we’re more than just a hardware supplier — we’re your trusted partner in sourcing
+            high-quality wholesale products across a wide range of categories.
+        </p>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <h3>Extensive Product Range</h3>
+                <p>From industrial-grade wires, cables, and lights to essential lugs, glands, PVC pipes, and all kinds
+                    of hardware tools — all under one roof.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>Uncompromising Quality</h3>
+                <p>We deal only in genuine, tested, and certified products from top-tier brands, ensuring long-lasting
+                    materials every time.</p>
+            </div>
+
+            <div class="why-card">
+                <h3 style="text-align: left;">Competitive Wholesale Prices</h3>
+                <p>Our strong supplier network allows us to offer unbeatable rates on bulk purchases, helping you
+                    maximize margins.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>Trusted by Professionals</h3>
+                <p>Electricians, builders, and resellers rely on us for consistent supply, quick service, and dependable
+                    stock availability.</p>
+            </div>
+
+            <div class="why-card">
+                <h3>Personalized Service</h3>
+                <p>Need help choosing products? Our experienced team provides support with selection, technical queries,
+                    and bulk orders.</p>
+            </div>
+            <div class="why-card">
+                <h3>Quick Delivery</h3>
+                <p>Fast dispatch and road-based logistics to reach you quickly and safely.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners-section">
+        <h2>Brands We Offer</h2>
+        <div class="partners-grid">
+            <img src="images/brands/bajaj.svg" alt="Partner 1">
+            <img src="images/brands/comet.webp" alt="Partner 2">
+            <img src="images/brands/cooper.svg" alt="Partner 3">
+            <img src="images/brands/lt.svg" alt="Partner 4">
+            <img src="images/brands/havells.svg" alt="Partner 5">
+            <img src="images/brands/crompton.svg" alt="Partner 6">
+            <img src="images/brands/peakmeter.gif" alt="Partner 7">
+            <img src="images/brands/osram.svg" alt="Partner 8">
+            <img src="images/brands/midas.svg" alt="Partner 9">
+            <img src="images/brands/philips.svg" alt="Partner 10">
+            <img src="images/brands/schneider.svg" alt="Partner 12">
+            <img src="images/brands/tektronix.svg" alt="Partner 13">
+        </div>
+    </section>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

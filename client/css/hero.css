@@ -1,0 +1,68 @@
+.hero {
+  min-height: 500;
+  display: flex;
+  padding: 40px;
+  font-family: Arial, 'Times New Roman', serif;
+  background-color: #f2f2f2;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Left: text + GST + supply list */
+.hero-left {
+  flex: 1;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gst-info {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero-left h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.supply-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.supply-item {
+  background-color: #e9e9ff00;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+/* Right: image */
+.hero-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  background-color: #dcdcdc; /* fallback color */
+}
+
+.hero-right img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+}

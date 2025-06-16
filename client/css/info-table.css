@@ -1,0 +1,40 @@
+.info-table-section {
+  max-width: 800px;
+  margin: 60px auto;
+  background: #f9faff;
+  border: 1px solid #b4ccff;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.info-table-section h2 {
+  text-align: center;
+  color: #4a70c1;
+  margin-bottom: 30px;
+}
+
+.info-table {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.label {
+  flex: 1 1 200px;
+  font-weight: 600;
+  color: #ff6600;
+}
+
+.value {
+  flex: 2 1 400px;
+  color: #333;
+}
