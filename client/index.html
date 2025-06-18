@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/top-bar.css">
-    <link rel="stylesheet" href="css/nav-bar.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/partner.css">
     <link rel="stylesheet" href="css/quality-section.css">
     <link rel="stylesheet" href="css/hero.css">
@@ -14,31 +13,23 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/business-info.css">
     <link rel="stylesheet" href="css/info-table.css">
+    <link rel="stylesheet" href="css/contact.css">
 
 </head>
 
 <body>
-
-    <div class="top-bar" id="topBar">
-        <div class="company-name">OM SAI TRADING CO.</div>
-        <div class="contact-info">
-            <img src="images/call.svg" alt="Phone" class="phone-icon">
-            <span>+91 98765 43210</span>
-        </div>
-    </div>
-
-    <nav class="nav-bar" id="navBar">
+     <nav class="nav-bar" id="navBar">
         <div class="logo">
             <img src="images/logo.svg" alt="OM SAI TRADING CO. Logo">
+            <span id="company-title">OM SAI TRADING CO.</span>
         </div>
         <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
         </ul>
     </nav>
-
     <section class="quality-section">
         <div class="left-text">
             <span>PROVIDING</span><br><br><span>BEST QUALITY</span>
@@ -53,7 +44,7 @@
                 BIGGEST SUPPLIER WITH A DECADE WORTH
                 OF EXPERIENCE
             </p>
-            <a href="#" class="know-more">KNOW MORE</a>
+            <a href="aboutUs.html" class="know-more">KNOW MORE</a>
         </div>
     </section>
 
@@ -103,7 +94,7 @@
 
         <div class="hero-right">
             <!-- Right-side image -->
-            <img src="your-image.jpg" alt="Hero Image">
+            <img src="images/categories/copper connectors.svg" alt="Hero Image">
         </div>
     </section>
 
@@ -117,53 +108,7 @@
 
             <!-- Scrollable Product Cards -->
             <div class="scrollable-cards" id="product-carousel">
-
-                <div class="product-card">
-                    <img src="images/categories/lighting.svg" alt="Wires and Cables">
-                    <br>
-                    <button class="product-range-btn">Lighting</button>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/Safety equipments.svg" alt="Insulation">
-                    <p>Insulation</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/switchgears.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <!-- Add more cards -->
-                <div class="product-card">
-                    <img src="images/categories/wires and cables.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/measuring instruments.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/flameproof Equipments.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/HT-LT-LINE-MATERIALS.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/electrical-accessories.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/Electrical insulatoin.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/copper connectors.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
-                <div class="product-card">
-                    <img src="images/categories/electronics-equipments.svg" alt="Measuring Instruments">
-                    <p>Measuring Instruments</p>
-                </div>
+                <!-- Dynamic cards will be appended here -->
             </div>
 
         </div>
@@ -319,9 +264,57 @@
             <img src="images/brands/tektronix.svg" alt="Partner 13">
         </div>
     </section>
+    <section class="contact-section">
+  <div class="contact-header">
+    <h1>Get In Touch</h1>
+    <p>We're here to help and answer any questions you might have.</p>
+  </div>
 
+  <div class="contact-content">
+    <!-- Contact Form -->
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <input type="text" name="subject" placeholder="Subject" />
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
 
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+
+      <div class="info-box">
+        <div class="label">PHONE:</div>
+        <div class="value">+91 98765 43210</div>
+      </div>
+
+      <div class="info-box">
+        <div class="label">EMAIL:</div>
+        <div class="value">contact@omsaitrading.com</div>
+      </div>
+
+      <div class="info-box">
+        <div class="label">ADDRESS:</div>
+        <div class="value">123, Industrial Road, Bhubaneswar, Odisha, India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+    <script src="js/product-range.js"></script>
+    <script src="js/contact.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
 
 </body>
 

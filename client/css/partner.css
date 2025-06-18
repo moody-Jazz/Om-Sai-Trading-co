@@ -1,34 +1,38 @@
+/* partners-section.css */
+
 .partners-section {
+  padding: 3rem 2rem;
+  background-color: #ffffff;
   text-align: center;
-  padding: 10px 20px;
-  background-color: #f9f9f9;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .partners-section h2 {
-  font-size: 3rem;
-  color: rgb(43, 43, 43);
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 10px;
-  text-align: center;
+  font-size: 2rem;
+  color: #1e40af;
+  margin-bottom: 2rem;
 }
 
+/* Grid Layout for Brand Logos */
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(6, calc((100% - 5 * 30px) / 6)); /* 6 cols with 5 gaps */
-  column-gap: 50px;
-  row-gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
   align-items: center;
+  justify-items: center;
   max-width: 1000px;
   margin: 0 auto;
-  padding: 0 0;
-  box-sizing: border-box;
 }
 
+/* Logo Styling */
 .partners-grid img {
-  max-width: 150px;
-  height: auto;
+  width: 140px;
+  height: 120px;
   object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: grayscale(60%);
+}
+
+.partners-grid img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }

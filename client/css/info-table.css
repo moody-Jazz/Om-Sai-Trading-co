@@ -1,40 +1,64 @@
+/* info-table.css */
+
 .info-table-section {
-  max-width: 800px;
-  margin: 60px auto;
-  background: #f9faff;
-  border: 1px solid #b4ccff;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-  padding: 30px;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 3rem 2rem;
+  background-color: #f9f9f9;
 }
 
 .info-table-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #1e40af;
   text-align: center;
-  color: #4a70c1;
-  margin-bottom: 30px;
 }
 
+/* Table Container */
 .info-table {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.row {
+/* Row Styling */
+.info-table .row {
   display: flex;
   flex-wrap: wrap;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #1e40af;
 }
 
-.label {
-  flex: 1 1 200px;
+/* Label and Value Styling */
+.info-table .label {
   font-weight: 600;
-  color: #ff6600;
+  color: #333;
+  flex: 1;
+  min-width: 200px;
 }
 
-.value {
-  flex: 2 1 400px;
-  color: #333;
+.info-table .value {
+  flex: 2;
+  color: #555;
+  word-wrap: break-word;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .info-table .row {
+    flex-direction: column;
+  }
+
+  .info-table .label,
+  .info-table .value {
+    flex: 1 1 100%;
+  }
+
+  .info-table .label {
+    margin-bottom: 0.5rem;
+  }
 }

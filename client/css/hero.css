@@ -1,68 +1,104 @@
+/* hero.css */
+
+/* Section container */
 .hero {
-  min-height: 500;
   display: flex;
-  padding: 40px;
-  font-family: Arial, 'Times New Roman', serif;
-  background-color: #f2f2f2;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 3rem 2rem;
+  background-color: #f2f6fc;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-/* Left: text + GST + supply list */
+/* Left Content */
 .hero-left {
-  flex: 1;
-  padding-right: 40px;
+  flex: 1.2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 1.5rem;
 }
 
+/* GST & Address Info */
 .gst-info {
-  font-size: 14px;
-  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
 }
 
-.hero-left h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
+/* Heading */
+.hero-left h3 {
+  font-size: 1.25rem;
+  color: #1e40af;
+  font-weight: 600;
 }
 
+/* Supply Grid */
 .supply-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-top: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
+/* Individual Item */
 .supply-item {
-  background-color: #e9e9ff00;
-  border-radius: 10px;
-  padding: 10px 15px;
-  font-size: 18px;
   display: flex;
   align-items: center;
+  background-color: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+  color: #333;
+  transition: transform 0.2s ease;
 }
 
-/* Right: image */
+.supply-item:hover {
+  transform: translateY(-2px);
+}
+
+.supply-item img.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+}
+
+/* Right Image */
 .hero-right {
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  min-height: 300px;
-  background-color: #dcdcdc; /* fallback color */
+  align-items: center;
 }
 
 .hero-right img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.icon {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  vertical-align: middle;
+/* Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-right img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .supply-grid {
+    grid-template-columns: 1fr;
+  }
 }
