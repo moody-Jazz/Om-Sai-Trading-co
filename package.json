@@ -1,0 +1,28 @@
+{
+  "name": "om-sai-trading-co",
+  "version": "1.0.0",
+  "description": "fullStack business website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moody-Jazz/Om-Sai-Trading-co.git"
+  },
+  "author": "Amit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moody-Jazz/Om-Sai-Trading-co/issues"
+  },
+  "homepage": "https://github.com/moody-Jazz/Om-Sai-Trading-co#readme",
+  "dependencies": {
+    "cloudinary": "^1.41.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.0",
+    "multer": "^2.0.1",
+    "multer-storage-cloudinary": "^4.0.0"
+  }
+}
