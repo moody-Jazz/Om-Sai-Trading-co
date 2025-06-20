@@ -1,105 +1,181 @@
-/* quality.css */
-
-.quality-section {
+/* Quality Banner Section */
+.quality-banner {
+  position: relative;
+  background-image: url("../images/hero.png"); /* Use your own image */
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  padding: 40px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: center;
+  color: #212529;
 }
 
-/* Left Text Styling */
-.left-text {
-  flex: 1;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #1e40af;
-  white-space: nowrap;
-}
-
-/* Right Content Block */
-.right-text {
-  flex: .5;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Search Box Styling */
-.search-box {
-  display: flex;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
+.quality-overlay {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   width: 100%;
-  max-width: 400px;
-}
-
-.search-box input {
-  flex: 1;
-  padding: 0.75rem 1rem;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-}
-
-.search-box button {
-  background-color: #1e40af;
-  border: none;
-  padding: 0 1rem;
-  cursor: pointer;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.search-box button img {
-  width: 20px;
-  height: 20px;
-  filter: invert(1);
+.quality-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
 }
 
-/* Paragraph styling */
-.right-text p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
+/* Left content */
+.quality-left {
+  flex: 1;
+  padding: 20px;
+}
+
+.quality-left h1 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.quality-left p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Right glass card */
+.quality-glass-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 30px 40px;
+  color: #212529;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   max-width: 500px;
 }
 
-/* CTA Link Button */
+.right-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.right-text h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subheadline {
+  font-size: 14px;
+  color: #495057;
+  margin: 0;
+}
+
+.search-box {
+  display: flex;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.search-box button {
+  padding: 0 16px;
+  background-color: #0d6efd;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+
+.search-box button img {
+  width: 20px;
+  height: 20px;
+}
+
 .know-more {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #1e40af;
+  background-color: #0d6efd;
   color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  display: inline-block;
   width: fit-content;
 }
 
-.know-more:hover {
-  background-color: #1e40af;
+.quick-links {
+  margin-top: 10px;
 }
 
-/* Responsive Adjustments */
+.quick-links span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.quick-links ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-links li a {
+  font-size: 13px;
+  background-color: #e9ecef;
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #212529;
+  transition: background-color 0.2s;
+}
+
+.quick-links li a:hover {
+  background-color: #dee2e6;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .quality-section {
+  .quality-content {
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    gap: 30px;
   }
 
-  .left-text {
-    font-size: 2rem;
-    white-space: normal;
-  }
-
-  .search-box {
+  .quality-left,
+  .quality-glass-card {
+    width: 100%;
     max-width: 100%;
+  }
+
+  .quality-left h1 {
+    font-size: 32px;
+  }
+
+  .quality-glass-card {
+    padding: 20px;
   }
 }
