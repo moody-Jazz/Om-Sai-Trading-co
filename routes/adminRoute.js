@@ -26,15 +26,20 @@ router.post('/products', async (req, res) => {
 });
 
 
-// GET all products (just name & ID)
+// GET all products/specific products by id
 router.get('/products', async (req, res) => {
   try {
-    const products = await Product.find({}, 'productID name image _id categoryID description');
+    const { categoryID } = req.query;
+
+    const filter = categoryID ? { categoryID } : {};
+    const products = await Product.find(filter, 'productID name image _id categoryID description priceRange');
+
     res.json(products);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
+
 
 // DELETE a product by ID
 router.delete('/products/:id', async (req, res) => {
@@ -46,7 +51,7 @@ router.delete('/products/:id', async (req, res) => {
   }
 });
 
-// GET all categories (just name & ID)
+// GET all categories
 router.get('/categories', async (req, res) => {
   try {
     const categories = await Category.find({}, 'categoryID name image description _id');
@@ -60,9 +65,9 @@ router.get('/categories', async (req, res) => {
 router.delete('/categories/:id', async (req, res) => {
   try {
     console.log('Deleting category ID:', req.params.id);
-    
+
     const deleted = await Category.findByIdAndDelete(req.params.id);
-    
+
     if (!deleted) {
       console.log('Nothing deleted — maybe ID is wrong or not found.');
       return res.status(404).json({ message: 'Category not found' });
@@ -86,6 +91,5 @@ router.put('/categories/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
 
 module.exports = router;
