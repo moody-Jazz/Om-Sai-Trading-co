@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Product Details</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    #productContainer {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .product-card {
+      display: flex;
+      gap: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-image {
+      max-width: 300px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .product-title {
+      font-size: 28px;
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .product-field {
+      margin-bottom: 10px;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    .value {
+      color: #222;
+    }
+
+    .add-to-cart {
+      padding: 10px 20px;
+      margin-top: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.2s ease;
+    }
+
+    .add-to-cart:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .product-card {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-image {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav-bar" id="navBar">
+    <div class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="OM SAI TRADING CO. Logo">
+        <span id="company-title">OM SAI TRADING CO.</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="category.html">Products</a></li>
+      <li><a href="aboutUs.html">About Us</a></li>
+      <li><a href="contactUs.html">Contact Us</a></li>
+      <li>
+        <a href="cart.html" class="cart-icon" aria-label="Cart">
+          <img src="images/cart.svg" alt="Cart" />
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="productContainer">
+    <!-- Product card will be injected here -->
+  </div>
+
+  <script>
+    async function loadProduct() {
+      const params = new URLSearchParams(window.location.search);
+      const productID = params.get("productID");
+      const container = document.getElementById("productContainer");
+
+      if (!productID) {
+        container.innerHTML = "<p>No product ID provided in the URL.</p>";
+        return;
+      }
+
+      try {
+        const res = await fetch("http://localhost:5000/api/products");
+        const products = await res.json();
+
+        const product = products.find(p => p.productID === productID);
+        if (!product) {
+          container.innerHTML = "<p>Product not found.</p>";
+          return;
+        }
+
+        const imageSrc = product.image || "placeholder.jpg"; // use default image if not available
+
+        const cardHTML = `
+          <div class="product-card">
+            <div class="product-info">
+              <h2 class="product-title">${product.name}</h2>
+              <div class="product-field"><span class="label">Product ID:</span> <span class="value">${product.productID}</span></div>
+              <div class="product-field"><span class="label">Category ID:</span> <span class="value">${product.categoryID}</span></div>
+              <div class="product-field"><span class="label">Description:</span> <span class="value">${product.description || "No description available."}</span></div>
+              <div class="product-field"><span class="label">Price Range:</span> <span class="value">${product.priceRange || "N/A"}</span></div>
+              <button class="add-to-cart" data-id="${product.productID}">Add to Cart</button>
+            </div>
+            <img class="product-image" src="${imageSrc}" alt="${product.name}">
+          </div>
+        `;
+
+        container.innerHTML = cardHTML;
+          const addToCartBtn = container.querySelector(".add-to-cart");
+    if (addToCartBtn) {
+      addToCartBtn.addEventListener("click", () => {
+        const productID = addToCartBtn.getAttribute("data-id");
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const existingItem = cart.find(item => item.productID === productID);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ productID, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Added to cart!");
+      });
+    }
+      } catch (err) {
+        console.error("Error loading product:", err);
+        container.innerHTML = "<p>Something went wrong while fetching the product.</p>";
+      }
+    }
+    
+    loadProduct();
+
+  </script>
+
+  <script src="js/explore-product.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
