@@ -1,7 +1,7 @@
 .env
 node_modules/
 client/images/categories/
-
+update.js
 adminPanelDB.categories.json
 adminPanelDB.products.json
 imgurls.txt
