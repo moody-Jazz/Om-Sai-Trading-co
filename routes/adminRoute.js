@@ -126,6 +126,28 @@ router.post('/contact', async (req, res) => {
   }
 });
 
+router.post("/order", async (req, res) => {
+  const { name, phone, cart } = req.body;
+
+  if (!name || !phone || !Array.isArray(cart) || cart.length === 0) {
+    return res.status(400).json({ success: false, message: "Invalid data" });
+  }
+
+  const orderHTML = cart.map(item => `
+    <li>
+        <strong>${item.name}</strong> (ID: ${item.productID}) — Quantity: ${item.quantity}
+    </li>`).join("");
+
+  const transporter = nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: parseInt(process.env.EMAIL_PORT),
+    secure: false,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
   const mailOptions = {
     from: process.env.EMAIL_USER,
     to: process.env.TO_EMAIL,
@@ -146,6 +168,6 @@ router.post('/contact', async (req, res) => {
     console.error("Email send error:", err);
     res.status(500).json({ success: false, message: "Email failed" });
   }
-;
+});
 
 module.exports = router;
