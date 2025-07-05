@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Product = require('../models/product');
 const Category = require('../models/category');
+const nodemailer = require('nodemailer');
 
 // Add new category
 router.post('/categories', async (req, res) => {
@@ -91,5 +92,60 @@ router.put('/categories/:id', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+router.post('/contact', async (req, res) => {
+  const { name, email, phone, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: "Missing required fields." });
+  }
+
+  const transporter = nodemailer.createTransport({
+    host: process.env.EMAIL_HOST,
+    port: parseInt(process.env.EMAIL_PORT),
+    secure: false, // true for port 465, false for 587
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
+    },
+  });
+
+  const mailOptions = {
+    from: `"${name}" <${email}>`,
+    to: process.env.TO_EMAIL,
+    subject: `Contact Form Submission from ${name}`,
+    text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nMessage:\n${message}`,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ success: true, message: "Message sent successfully." });
+  } catch (error) {
+    console.error("Email send error:", error);
+    res.status(500).json({ success: false, error: "Failed to send message." });
+  }
+});
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: process.env.TO_EMAIL,
+    subject: "New Order from Website",
+    html: `
+      <h2>Customer Details</h2>
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <h3>Cart Items</h3>
+      <ul>${orderHTML}</ul>
+    `,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    res.json({ success: true });
+  } catch (err) {
+    console.error("Email send error:", err);
+    res.status(500).json({ success: false, message: "Email failed" });
+  }
+;
 
 module.exports = router;
