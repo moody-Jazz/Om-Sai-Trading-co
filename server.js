@@ -3,9 +3,11 @@ const mongoose = require('mongoose');
 const path = require('path');
 const app = express();
 const adminRoute = require('./routes/adminRoute');
+const cors = require('cors');
 require('dotenv').config();
 // ------------------- MIDDLEWARE -------------------
 
+app.use(cors());
 // Parse JSON and form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -31,9 +33,9 @@ mongoose.connect(MONGO_URL)
     console.error('MongoDB connection error:', err);
     process.exit(1);
   });
-// ------------------- SERVER START -------------------
 
-const PORT = process.env.PORT;
+// ------------------- SERVER START -------------------
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on PORT ${PORT}`);
 });
