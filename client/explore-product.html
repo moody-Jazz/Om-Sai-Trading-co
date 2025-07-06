@@ -1,11 +1,9 @@
-<!-- public/products.html -->
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Products</title>
-    <link rel="stylesheet" href="css/explore-product.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore products</title>
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/explore-product.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -14,6 +12,11 @@
 <body>
     <nav class="nav-bar" id="navBar">
         <div class="logo">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <a href="index.html" class="logo-link">
                 <img src="images/logo.svg" alt="OM SAI TRADING CO. Logo">
                 <span id="company-title">OM SAI TRADING CO.</span>
@@ -32,7 +35,6 @@
             </li>
         </ul>
     </nav>
-
     <h1 id="product-heading">Products</h1>
     <div id="product-list"></div>
     <footer class="site-footer">
@@ -49,6 +51,7 @@
             </iframe>
         </div>
     </footer>
+    <script src="js/script.js"></script>
     <script src="js/explore-product.js"></script>
 </body>
 

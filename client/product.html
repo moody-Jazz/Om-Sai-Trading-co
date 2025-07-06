@@ -83,29 +83,35 @@
       }
     }
   </style>
+
 </head>
 
 <body>
   <nav class="nav-bar" id="navBar">
-    <div class="logo">
-      <a href="index.html" class="logo-link">
-        <img src="images/logo.svg" alt="OM SAI TRADING CO. Logo">
-        <span id="company-title">OM SAI TRADING CO.</span>
-      </a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="category.html">Products</a></li>
-      <li><a href="aboutUs.html">About Us</a></li>
-      <li><a href="contactUs.html">Contact Us</a></li>
-      <li>
-        <a href="cart.html" class="cart-icon" aria-label="Cart">
-          <img src="images/cart.svg" alt="Cart" />
-          <span class="cart-count" id="cartCount">0</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+        <div class="logo">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="OM SAI TRADING CO. Logo">
+                <span id="company-title">OM SAI TRADING CO.</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="category.html">Products</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+            <li>
+                <a href="cart.html" class="cart-icon" aria-label="Cart">
+                    <img src="images/cart.svg" alt="Cart" />
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
   <div id="productContainer">
     <!-- Product card will be injected here -->

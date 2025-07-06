@@ -146,6 +146,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     };
 
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburgerBtn && navLinks) {
+        hamburgerBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+
     // === Run all initializers ===
     fadeInOnLoad();
     setupRevealOnScroll();
@@ -153,3 +163,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     setupHighlightCounters();
     setupSearch();
 });
+

@@ -4,6 +4,8 @@ const Product = require('../models/product');
 const Category = require('../models/category');
 const nodemailer = require('nodemailer');
 
+
+
 // Add new category
 router.post('/categories', async (req, res) => {
   try {
@@ -30,9 +32,11 @@ router.post('/products', async (req, res) => {
 // GET all products/specific products by id
 router.get('/products', async (req, res) => {
   try {
-    const { categoryID } = req.query;
+    const { categoryID, productID } = req.query;
 
-    const filter = categoryID ? { categoryID } : {};
+    const filter = {};
+    if (categoryID) filter.categoryID = categoryID;
+    if (productID) filter.productID = productID;
     const products = await Product.find(filter, 'productID name image _id categoryID description priceRange');
 
     res.json(products);

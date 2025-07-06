@@ -162,17 +162,26 @@
   .quality-content {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 20px; /* reduced gap for tighter layout */
+    width: 100%;
   }
 
   .quality-left,
   .quality-glass-card {
     width: 100%;
-    max-width: 100%;
+    max-width: 90vw; /* keeps inside viewport */
+    padding: 0 16px;  /* adds side padding to avoid overflow */
+    box-sizing: border-box;
   }
 
   .quality-left h1 {
-    font-size: 32px;
+    font-size: 28px; /* smaller title */
+    text-align: center;
+    word-wrap: break-word;
+  }
+
+  .quality-left p {
+    text-align: center;
   }
 
   .quality-glass-card {
