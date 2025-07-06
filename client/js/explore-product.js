@@ -42,4 +42,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.error("Failed to load products:", err);
     }
     
+    document.body.addEventListener("click", function (event) {
+      if (event.target.classList.contains("add-to-cart")) {
+        const productId = event.target.getAttribute("data-id");
+        if (!productId) return;
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existing = cart.find(item => item.productID === productId);
+
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ productID: productId, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Added to cart!");
+      }
+    });
 });
