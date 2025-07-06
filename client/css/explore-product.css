@@ -60,3 +60,50 @@
   letter-spacing: 1px;
 }
 
+@media (max-width: 768px) {
+  .product-card {
+    flex-direction: column;
+    width: 90%;
+    max-width: 340px; /* smaller than 400px */
+    margin: 0 auto;
+  }
+
+  .card-left img {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+  }
+
+  .card-right {
+    padding: 14px;
+    text-align: center;
+  }
+
+  .card-right h2 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .card-right p {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  #product-list {
+    padding: 16px;
+    gap: 14px;
+  }
+
+  #product-heading {
+    font-size: 1.6rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
