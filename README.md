@@ -1,6 +1,6 @@
 # Om Sai Trading Co.
 
-![Om Sai Trading Co. Website Preview](client/images/landing.png)
+![Om Sai Trading Co. Website Preview](client/images/landing.PNG)
 
 **Live Website**: [Click here to visit the website](https://om-sai-trading-co.onrender.com/)
 
